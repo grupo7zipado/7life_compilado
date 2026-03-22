@@ -1,0 +1,27 @@
+{
+  "name": "7life_compilado",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\""
+    ,"dev:api": "node ./src/api/src/index.js"
+    ,"dev:broker": "node ./src/broker/src/index.js"
+    ,"dev:web": " cd ./src/web && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grupo7zipado/7life_compilado.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grupo7zipado/7life_compilado/issues"
+  },
+  "homepage": "https://github.com/grupo7zipado/7life_compilado#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
