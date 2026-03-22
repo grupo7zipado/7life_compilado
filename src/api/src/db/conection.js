@@ -1,14 +1,15 @@
-require('dotenv').config();
+const db = require("../../../../db.json");
 const mysql = require("mysql2/promise");
 
 
 const config = {
-    host: "10.67.23.216",
-    port: "3306",
-    user: "us_des_222_sa3",
-    password: "ab1506",
-    database: "bd_tcc_des_222_sa3"
+    host: db.DB_HOST,
+    port: db.DB_PORT,
+    user: db.DB_USER,
+    password: db.DB_PASSWORD,
+    database: db.DB_NAME
 }
+
 let connection;
 
 try {
