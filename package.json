@@ -1,11 +1,11 @@
 {
   "name": "7life_compilado",
-  "version": "1.0.1",
+  "version": "1.0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     
-    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\""
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:broker\""
     ,"dev:api": "node ./src/api/src/index.js"
     ,"dev:broker": "node ./src/broker/src/index.js"
     ,"dev:web": " cd ./src/web && npm run dev"
