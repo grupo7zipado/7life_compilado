@@ -10,8 +10,6 @@ const http = require("http");
 //CONEXÃO COM BANCO
 const db = require("./db.js");
 
-require('dotenv').config();
-
 // Porta do broker MQTT
 const PORT_MQTT = 1883;
 const WS_PORT =  9001;
