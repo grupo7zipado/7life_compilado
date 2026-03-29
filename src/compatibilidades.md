@@ -1,4 +1,4 @@
-# V1.0.4 - V1.0.4
+# V1
 
 1. Abrir o local do projeto no terminal:
 1. 1. Executar "npm i"
@@ -15,3 +15,5 @@
   3. "DB_USER" - Usuário;
   4. "DB_PASSWORD" - Senha;
   5. "DB_NAME" - Nome da base de dados;
+
+- versão 2 do banco tbm é compativel com o sistema

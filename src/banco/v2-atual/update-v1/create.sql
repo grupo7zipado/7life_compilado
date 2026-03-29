@@ -1,4 +1,5 @@
 -- Tablea adcionada da v1 para v2, para guardar os dados de autenticação dos usuários
+DROP TABLE IF EXISTS usuariosA;
 CREATE TABLE IF NOT EXISTS usuariosA(
     usu_id INT PRIMARY KEY NOT NULL,
     usu_email VARCHAR(128) NOT NULL UNIQUE,
