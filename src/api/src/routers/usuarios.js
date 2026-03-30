@@ -2,7 +2,7 @@
 // Cria as rotas
 const express = require("express")
 // Funções da rota
-const { cadastroUsuarios, dadosUsuarios} = require("../controllers/usuariosController");
+const { cadastroUsuarios, dadosUsuarios, Login} = require("../controllers/usuariosController");
 
 // Cria as rotas
 const usuariosRouter = express.Router();
@@ -11,6 +11,6 @@ const usuariosRouter = express.Router();
 // Cadastra os usuarios
 usuariosRouter.post("/usuarios", cadastroUsuarios);
 usuariosRouter.get("/usuarios/:usu_id", dadosUsuarios);
-
+usuariosRouter.post("/login", Login)
 // Exporta
 module.exports = { usuariosRouter}
