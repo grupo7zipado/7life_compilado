@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/grupo7zipado/BrokerMQTT.git"
   },
-  "type": "module",
+
   "author": "gabriell122",
   "license": "ISC",
   "bugs": {

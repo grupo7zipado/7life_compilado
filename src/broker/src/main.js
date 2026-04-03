@@ -10,8 +10,27 @@ import ws from 'ws';
 // CRIA O SERVIÇO HTTP
 import http from 'http';
 
-//
-import db from "./db.js";
+import db from "../../../db.json" assert { type: "json" };
+import mysql from "mysql2/promise";
+
+
+const config = {
+    host: db.DB_HOST,
+    port: db.DB_PORT,
+    user: db.DB_USER,
+    password: db.DB_PASSWORD,
+    database: db.DB_NAME
+}
+
+let connection;
+
+try {
+    connection = mysql.createPool(config)
+    console.log(connection);
+} catch (error) {
+    console.log(error)
+}
+
 
 // Porta do broker MQTT
 const PORT_MQTT = 1883;
