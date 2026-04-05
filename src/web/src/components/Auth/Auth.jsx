@@ -1,13 +1,27 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Auth/Auth.css";
-import logo from "../../assets/7life_icon.ico";
 
-export default function Auth() {
+
+export default function Login() {
   const [active, setActive] = useState(false);
 
+  const navigate = useNavigate();
+
+  const goToLogin  = () => {
+    // aqui você pode validar login
+    navigate("/landing-page");
+  };
+
   return (
+
     
    <div className="auth">
+     {/* BOTÃO SAIR */}
+     <button className="btn-logout" onClick={goToLogin}>
+       Voltar
+     </button>
+
      <div className={`container ${active ? "active" : ""}`}>
 
       {/* SIGN UP */}
@@ -16,9 +30,8 @@ export default function Auth() {
           <h1>Criar uma conta</h1>
 
           <div className="social-container">
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
             <a href="#"><i className="fab fa-google-plus-g"></i></a>
-            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+           <a href="#"><i className="fab fa-github"></i></a>
             <a href="#"><i className="fab fa-whatsapp"></i></a>
           </div>
 
@@ -33,12 +46,11 @@ export default function Auth() {
       {/* SIGN IN */}
       <div className="form-container sign-in">
         <form>
-          <h1>  <img src={logo} alt="logo" style={{ width: 80,  border: '1px solid #000000' }} /></h1>
+          <h1>Login</h1>
 
           <div className="social-container">
             <a href="#"><i className="fab fa-google-plus-g"></i></a>
-            <a href="#"><i className="fab fa-facebook-f"></i></a>
-            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+            <a href="#"><i className="fab fa-github"></i></a>
             <a href="#"><i className="fab fa-whatsapp"></i></a>
           </div>
 
@@ -55,8 +67,8 @@ export default function Auth() {
         <div className="toggle">
 
           <div className="toggle-panel toggle-left">
-            <h1>Bem vindo de volta!</h1>
-            <p>Insira seus dados pessoais para usar todos os recursos do site.</p>
+            <h1>Bem-vindo de volta!</h1>
+            <p>Acesse sua conta para continuar</p>
             <button className="hidden" onClick={() => setActive(false)}>
               Entrar
             </button>
@@ -64,7 +76,7 @@ export default function Auth() {
 
           <div className="toggle-panel toggle-right">
             <h1>Olá, amigo!</h1>
-            <p>Cadastre-se com seus dados pessoais para usar todos os recursos do site.</p>
+            <p>Cadastre-se com seus dados pessoais para usar todos os recursos do Sistema.</p>
             <button className="hidden" onClick={() => setActive(true)}>
               Inscrever-se
             </button>

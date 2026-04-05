@@ -15,6 +15,7 @@
     "mqtt": "^5.10.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.0",
     "recharts": "^2.15.1",
     "sweetalert2": "^11.21.0"
   },

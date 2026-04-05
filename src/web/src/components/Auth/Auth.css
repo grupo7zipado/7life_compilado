@@ -8,6 +8,7 @@
 }
 
 .auth {
+    color: #000000;
     background-color: #c9d6ff;
     background: radial-gradient(circle at 70% 50%, rgba(0, 140, 255, 0.2), transparent 60%),
               radial-gradient(circle at 20% 30%, rgba(0, 140, 255, 0.1), transparent 50%);
@@ -16,6 +17,25 @@
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+}
+.btn-logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #1518f1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.btn-logout:hover {
+  background-color: #2541e0;
+  transform: scale(1.05);
 }
 
 .container {
@@ -37,22 +57,23 @@
 }
 
 .container span {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .container a {
     color: #000000;
-    font-size: 13px;
+    font-size: 15px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
 
 .container button {
-    background-color: #512da8;
+     background: radial-gradient(circle at 70% 50%, rgba(0, 140, 255, 0.651), transparent 60%),
+              radial-gradient(circle at 20% 30%, rgba(0, 140, 255, 0.74), transparent 50%);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
-    border: 1px solid transparent;
+    border: 1px solid black;
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -71,6 +92,7 @@
 }
 
 .container form {
+    font-size: 25px;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -81,6 +103,7 @@
 }
 
 .container input {
+    color: #000000;
     background-color: #eee;
     border: none;
     padding: 10px 15px;

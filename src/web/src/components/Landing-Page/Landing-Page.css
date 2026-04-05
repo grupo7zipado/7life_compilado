@@ -70,7 +70,7 @@ nav a:hover {
   margin-right: 35px;
   background: linear-gradient(135deg, #2563eb, #1e40af);
   border: none;
-  padding: 12px 45px;
+  padding: 12px 55px;
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -130,7 +130,7 @@ nav a:hover {
 
 
 .right img {
-  width: 600px;
+  width: 800px;
   filter: drop-shadow(0 0 30px rgba(0, 129, 235, 0.6));
 }
 

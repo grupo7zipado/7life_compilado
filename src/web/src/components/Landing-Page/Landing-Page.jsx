@@ -1,7 +1,16 @@
-import "../login/login.css";
+import "./Landing-Page.css";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const goToLogin  = () => {
+    // aqui você pode validar login
+    navigate("/Auth");
+  };
+
+
   return (
     <div className="home">
 
@@ -23,7 +32,7 @@ export default function Home() {
           <a href="#">Contato</a>
         </nav>
 
-        <button className="btn-primary">Login</button>
+        <button className="btn-primary" onClick={goToLogin}>Login</button>
       </header>
 
       {/* HERO */}
