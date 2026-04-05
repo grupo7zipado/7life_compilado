@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:broker\"",
-    "dev:api": "node ./src/api/src/index.js",
+    "dev:api": "node ./src/api/v1/src/index.js",
     "dev:broker": "node ./src/broker/src/index.js",
     "dev:web": " cd ./src/web && npm run dev"
   },
@@ -33,6 +33,7 @@
     "net": "^1.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.0",
     "recharts": "^2.15.1",
     "sweetalert2": "^11.21.0",
     "ws": "^8.18.1"
