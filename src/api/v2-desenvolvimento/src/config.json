@@ -5,4 +5,5 @@
    ,"DB_USER": "root"
    ,"DB_PASSWORD": ""
    ,"DB_NAME": "tcctestes"
+   ,"CHAVE_JWT": "chave_secreta_para_gerar_tokens"
 }

@@ -1,7 +1,7 @@
+import BySenha from "../fuctions/bcrypt.js";
 import ValidarEmail from "../fuctions/validarEmail.js";
 import _db from "../services/db.js";
 import usuariosSql from "../sql/usuarios.js";
-const tempSQL = ""
 const usuariosController = {
     async Cadastro(req, res){
         try {
@@ -21,16 +21,18 @@ const usuariosController = {
             }
             
             if(!ValidarEmail(usu_email)){
-                return res.status(400).json({
+                return res.status(422).json({
                     sucess:false
                    ,message: "Email invalido"
                 })
             }
 
-            const cadastrarUsuario = await _db.query(usuariosSql.InsertUsuarios, [usu_nome, usu_email, usu_password, usu_nascimento, usu_tipo])
+            const hashSenha = await BySenha.gerarHash(usu_password);
+
+            const cadastrarUsuario = await _db.query(usuariosSql.InsertUsuarios, [usu_nome, usu_email, hashSenha, usu_nascimento, usu_tipo])
             if(!cadastrarUsuario[0][0][0]._sucess){
-                return res.status(201).json({
-                    sucess:true
+                return res.status(409).json({
+                    sucess:false
                    ,message: cadastrarUsuario[0][0][0]._message
                 })
             }
@@ -41,7 +43,7 @@ const usuariosController = {
         } catch (error) {
             console.log(error);
             
-            return res.status(400).json({
+            return res.status(500).json({
                 sucess: false
                ,message:"Erro não indentificado"
                ,error: error
@@ -74,7 +76,7 @@ const usuariosController = {
             }
 
         } catch (error) {
-            return res.status(400).json({
+            return res.status(500).json({
                 sucess: false
                ,message:"Erro não indentificado"
                ,error: error
@@ -92,7 +94,7 @@ const usuariosController = {
                 ,data: dadosUsuarios[0]
             })
         } catch (error) {
-            return res.status(400).json({
+            return res.status(500).json({
                 sucess: false
                ,message:"Erro não indentificado"
                ,error: error
