@@ -18,15 +18,16 @@
     flex-direction: column;
     height: 100vh;
 }
-.btn-logout {
+.btn-voltar {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #1518f1;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
   color: #fff;
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
   border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 12px 55px;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -68,14 +69,14 @@
 }
 
 .container button {
-     background: radial-gradient(circle at 70% 50%, rgba(0, 140, 255, 0.651), transparent 60%),
-              radial-gradient(circle at 20% 30%, rgba(0, 140, 255, 0.74), transparent 50%);
+   background: linear-gradient(135deg, #2563eb, #1e40af);
+    box-shadow: 0 5px 15px rgba(110, 106, 106, 0.35);
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: bold;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;

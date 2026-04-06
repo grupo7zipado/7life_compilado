@@ -70,6 +70,7 @@ nav a:hover {
   margin-right: 35px;
   background: linear-gradient(135deg, #2563eb, #1e40af);
   border: none;
+  font-weight: bold;
   padding: 12px 55px;
   border-radius: 8px;
   color: white;
@@ -101,6 +102,7 @@ nav a:hover {
 
 
 .left {
+  margin-bottom: 20px;
   margin-left: 100px;
   max-width: 600px;
 }
@@ -122,6 +124,7 @@ nav a:hover {
 
 
 .buttons {
+  font-size: bold;
   justify-content: center;
   display: flex;
   gap: 15px;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../Auth/Auth.css";
+import "../Auth/Login.css";
 
 
 export default function Login() {
@@ -13,13 +13,17 @@ export default function Login() {
     navigate("/landing-page");
   };
 
+  const teste = () => {
+    navigate("/Main");
+  };
+ 
   return (
 
     
    <div className="auth">
      {/* BOTÃO SAIR */}
-     <button className="btn-logout" onClick={goToLogin}>
-       Voltar
+     <button className="btn-voltar" onClick={goToLogin}>
+       <i className="fas fa-sign-out-alt"></i> Voltar
      </button>
 
      <div className={`container ${active ? "active" : ""}`}>
@@ -39,7 +43,7 @@ export default function Login() {
           <input type="text" placeholder="Nome" />
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Senha" />
-          <button type="button">Inscrever-se</button>
+          <button type="button">Cadastrar</button>
         </form>
       </div>
 
@@ -58,7 +62,7 @@ export default function Login() {
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Senha" />
           <a href="#">Esqueceu sua senha?</a>
-          <button type="button">Entrar</button>
+          <button type="button" onClick={teste}>Entrar</button>
         </form>
       </div>
 
@@ -78,7 +82,7 @@ export default function Login() {
             <h1>Olá, amigo!</h1>
             <p>Cadastre-se com seus dados pessoais para usar todos os recursos do Sistema.</p>
             <button className="hidden" onClick={() => setActive(true)}>
-              Inscrever-se
+              Cadastrar
             </button>
           </div>
 

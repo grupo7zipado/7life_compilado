@@ -7,7 +7,7 @@ export default function Home() {
 
   const goToLogin  = () => {
     // aqui você pode validar login
-    navigate("/Auth");
+    navigate("/Login");
   };
 
 
@@ -48,7 +48,7 @@ export default function Home() {
           </p>
 
           <div className="buttons">
-            <button className="btn-primary">Acessar Sistema</button>
+            <button className="btn-primary" onClick={goToLogin}>Acessar Sistema</button>
 
             
           </div>
