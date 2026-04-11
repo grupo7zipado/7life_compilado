@@ -12,7 +12,8 @@ const usuariosController = {
                ,usu_nascimento
                ,usu_tipo = "user"
             } = req.body;
-
+            console.log([usu_nome, usu_email, usu_password, usu_nascimento, usu_tipo]);
+            
             if(!(usu_nome && usu_email && usu_password && usu_nascimento && usu_tipo)){
                 return res.status(400).json({
                     sucess:false

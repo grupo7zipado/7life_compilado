@@ -7,17 +7,17 @@
     LEIA COM ATENÇÃO OS COMENTARIOS
 */
 
-
 import bcrypt from "bcrypt";
 import mysql from "mysql2/promise";
 
 // ALTERAR AS CONFIGURAÇÕES PARA SUA BASE DE DADOS UTILIZADA E A QUANTIDADE DE PULOS QUE UTILIZA NO BCRYPT
 const configs = {
-   "DB_HOST": "localhost"
-   ,"DB_PORT": "3306"
-   ,"DB_USER": "root"
-   ,"DB_PASSWORD": ""
-   ,"DB_NAME": "tcctestes"
+    "PORTA": 3000,
+    "DB_HOST": "10.67.22.216",
+    "DB_PORT": "3306",
+    "DB_USER": "us_des_222_sa3",
+    "DB_PASSWORD": "ab1506",
+    "DB_NAME": "bd_tcc_des_222_sa3"
    ,"PULOS": 10
 }
 
