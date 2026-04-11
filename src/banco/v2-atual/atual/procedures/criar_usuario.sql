@@ -27,7 +27,7 @@ main:BEGIN
 	
     IF EXISTS (
         SELECT 1 
-        FROM usuarios 
+        FROM usuariosA 
         WHERE usu_email = p_email
     ) THEN
 
