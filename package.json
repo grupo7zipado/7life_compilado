@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:broker\"",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\" \"npm run dev:broker\" \"npm run dev:api2\"",
     "dev:api": "node ./src/api/v1/src/index.js",
     "dev:broker": "node ./src/broker/src/index.js",
-    "dev:web": " cd ./src/web && npm run dev"
+    "dev:web": " cd ./src/web && npm run dev",
+    "dev:api2": "node ./src/api/v2-desenvolvimento/src/index.js",
+    "dev:senhaHash": "node ./src/scripts/gerarHashSenha.js"
   },
   "repository": {
     "type": "git",

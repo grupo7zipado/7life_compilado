@@ -42,8 +42,6 @@ const usuariosController = {
                ,message: "Usuário castrastrado"
             })
         } catch (error) {
-            console.log(error);
-            
             return res.status(500).json({
                 sucess: false
                ,message:"Erro não indentificado"
@@ -86,6 +84,9 @@ const usuariosController = {
     }
     , async Listar(req, res){
         try {
+            
+            const { user } = req.user 
+
             
             const dadosUsuarios = await _db.query(usuariosSql.SelectData);
 

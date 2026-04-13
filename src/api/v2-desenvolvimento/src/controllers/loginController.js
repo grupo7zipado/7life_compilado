@@ -20,15 +20,14 @@ const LoginController = {
                 })
             }
 
-            // if(!ValidarEmail(usu_email)){
-            //     return res.status(422).json({
-            //         sucess:false
-            //        ,message: "Email invalido"
-            //     })
-            // }
+            if(!ValidarEmail(usu_email)){
+                return res.status(422).json({
+                    sucess:false
+                   ,message: "Email invalido"
+                })
+            }
 
             const LoginUsuarios = await _db.query(LoginSql.Login, usu_email)
-            
             if(!LoginUsuarios[0][0][0]._sucess){
                 if(LoginUsuarios[0][0][0]._message == "Usuário inativo"){
                     return res.status(403).json({
@@ -67,7 +66,7 @@ const LoginController = {
                 }else{
                    return res.status(403).json({
                         sucess:false
-                       ,message: "Usuário inativo"
+                       ,message: "Erro acesso negado"
                     }) 
                 }
             }
