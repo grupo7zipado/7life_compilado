@@ -1,21 +1,60 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Auth/Login.css";
+import Api from "../../service/conn2"
 
 
 export default function Login() {
+
+
+  // estados para controlar os campos de email, senha, mensagens de erro e loading
+ const [usu_email, setEmail] = useState("");
+ const [usu_senha, setSenha] = useState("");  
+ const [error, setError] = useState("");
+ const [loading, setLoading] = useState(false);
+
+  async function handleLogin() {
+  if( !usu_email || !usu_senha ) {
+    setError("Preencha email e senha");
+    return;
+  }
+  try {
+  setLoading(true);
+  setError(null);
+
+  const response = await Api.post("/login", {
+  usu_email,
+  usu_password: usu_senha
+});
+
+localStorage.setItem("token", response.data.data.token);
+
+navigate("/main");
+
+  } catch (error) {
+
+   const errorMessage = error.response?.data?.message || "Ocorreu um erro no login";
+   setError(errorMessage);
+
+  }
+  finally {
+    setLoading(false);
+  }
+
+ }
+ /// estado para controlar a animação de transição entre login e cadastro
+
   const [active, setActive] = useState(false);
 
+  // funcion para navegar entre as páginas
   const navigate = useNavigate();
-
   const goToLogin  = () => {
     // aqui você pode validar login
     navigate("/landing-page");
   };
-
-  const teste = () => {
-    navigate("/Main");
-  };
+  // const teste = () => {
+  //   navigate("/Main");
+  // };
  
   return (
 
@@ -59,10 +98,12 @@ export default function Login() {
           </div>
 
           <span>Insira seu Email</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Senha" />
+          <input type="email" value={usu_email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+          <input type="password" value={usu_senha} onChange={(e) => setSenha(e.target.value)} placeholder="Senha" />
           <a href="#">Esqueceu sua senha?</a>
-          <button type="button" onClick={teste}>Entrar</button>
+          <button type="button" onClick={handleLogin}>
+            Entrar
+          </button>
         </form>
       </div>
 
