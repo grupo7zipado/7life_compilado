@@ -9,6 +9,8 @@ extern const unsigned char epd_bitmap_gota_de_sangue[];      // Icon SPO2
 extern const unsigned char epd_bitmap_coracao[];             // Icon BPM
 extern const unsigned char epd_bitmap_termometro[];          // Icon Temperatura
 
+extern const unsigned char epd_bitmap_wifi[];                // Icon Wifi
+
 extern const int epd_bitmap_allArray_LEN;
 extern const unsigned char* epd_bitmap_allArray[];
 
