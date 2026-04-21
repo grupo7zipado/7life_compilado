@@ -1,6 +1,7 @@
 #include "display.h"
 #include "config.h"
 #include "bitmaps.h"
+#include "connections.h"
 
 #include <Wire.h>
 #include <Adafruit_GFX.h>                               
@@ -59,7 +60,11 @@ void showMainScreen(float abpm, int spo2, float temp) {
   display.drawBitmap(0, 28, epd_bitmap_gota_de_sangue, 16, 16, WHITE);
   display.setCursor(22, 28);
   display.print("O2: ");
+  if (spo2 > 0 && spo2 <= 100) {
   display.print(spo2);
+  } else {
+  display.print("--");
+  }
   display.print("%");
 
   // Temperatura
@@ -68,6 +73,14 @@ void showMainScreen(float abpm, int spo2, float temp) {
   display.print("TEMP: ");
   display.print(temp, 1);
   display.print("C");
+
+  
+  // Wifi
+  if (wifiConnected()) {
+    display.drawBitmap(110, 0, epd_bitmap_wifi, 16, 16, WHITE);
+  } else {
+    display.fillRect(110, 0, 16, 16, BLACK);
+  }
 
   display.display();
 }
