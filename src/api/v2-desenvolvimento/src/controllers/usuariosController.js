@@ -65,7 +65,7 @@ const usuariosController = {
                 return res.status(200).json({
                     sucess: true
                    ,message:"suscesso"
-                   ,data: dadosUsuarios[0][0][0]
+                   ,data: dadosUsuarios[0][0]
                 })
             }else{
                 return res.status(400).json({

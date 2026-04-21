@@ -6,7 +6,7 @@ CREATE PROCEDURE proc_ultimos_dados_usuarios (
 	IN p_usu_id INT
 )
 main:BEGIN 
-	DECLARE _sucess TINYINT(1);
+    DECLARE _sucess TINYINT(1);
     DECLARE _message VARCHAR(255);
 
 	SET _sucess = 0
