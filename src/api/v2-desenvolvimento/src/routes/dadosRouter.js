@@ -5,6 +5,7 @@ import AutentificacaoJwt from "../fuctions/atentificacaoJwt.js";
 const DadosRouter = Router();
 
 DadosRouter
+.get("/usuarios/ultimos", AutentificacaoJwt, DadosController.DadosUsuariosUltimos)
 .get("/usuarios/:usu_id", AutentificacaoJwt, DadosController.DadosUsuarios)
 
 ;

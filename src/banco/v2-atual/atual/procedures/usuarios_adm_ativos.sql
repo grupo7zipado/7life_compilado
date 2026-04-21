@@ -4,19 +4,20 @@ DROP PROCEDURE IF EXISTS proc_usuarios_adm_ativos;
 DELIMITER $$
 
 CREATE PROCEDURE proc_usuarios_adm_ativos (
-    IN p_usu_id INT
+    IN p_usu_id INT,
+    OUT _sucess TINYINT(1),
+    OUT _message VARCHAR(256)
 )
 main:BEGIN 
-    
-    DECLARE _sucess BOOLEAN DEFAULT TRUE;
-    DECLARE _message VARCHAR(255) DEFAULT '';
+
     DECLARE _usu_tipo VARCHAR(255);
     DECLARE _usu_status TINYINT(1);
     
+	SET _sucess = 0
+       ,_message = '';
     IF p_usu_id IS NULL THEN
-        SELECT 
-            0 AS _sucess,
-            'Dados Invalidos' AS _message;
+        SET _sucess = 0
+           ,_message = 'Dados Invalidos';
         LEAVE main;
     END IF;
     
@@ -26,29 +27,26 @@ main:BEGIN
     WHERE usu_id = p_usu_id;
 
     IF _usu_status IS NULL THEN
-        SELECT 
-            0 AS _sucess,
-            'Usuário não encontrado' AS _message;
+        SET _sucess = 0
+           ,_message = 'Usuário não encontrado';
         LEAVE main;
     END IF;
 
     IF _usu_status = 0 THEN
-        SELECT 
-            0 AS _sucess,
-            'Usuário inativo' AS _message;
+        SET _sucess = 0
+           ,_message = 'Usuário inativo';
         LEAVE main;
     END IF;
     
     IF _usu_tipo = 'admin' THEN
-        SELECT 
-            _sucess,
-            _message;
+        SET _sucess = 1;
+        LEAVE main;
     ELSE
-        SELECT 
-            0 AS _sucess,
-            'Sem permissão' AS _message;
+        SET _sucess = 0
+           ,_message = 'Sem permissão';
+        LEAVE main;
     END IF;
 
 END $$
 
-DELIMITER ;
+DELIMITER;

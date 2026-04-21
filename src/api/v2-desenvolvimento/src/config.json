@@ -1,9 +1,9 @@
 {
     "PORTA": 3000,
-    "DB_HOST": "10.67.22.216",
+    "DB_HOST": "localhost",
     "DB_PORT": "3306",
-    "DB_USER": "us_des_222_sa3",
-    "DB_PASSWORD": "ab1506",
-    "DB_NAME": "bd_tcc_des_222_sa3",
+    "DB_USER": "root",
+    "DB_PASSWORD": "",
+    "DB_NAME": "tcctestes",
     "CHAVE_JWT": "chave_secreta_para_gerar_tokens"
 }
