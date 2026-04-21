@@ -1,0 +1,17 @@
+/SafeGuard
+│
+├── SafeGuard.ino          → fluxo principal (setup + loop)
+├── config.h               → configurações globais (WiFi, MQTT, pinos)
+│
+├── connections.h          
+├── wifi.cpp               → WiFi
+├── mqtt.cpp               → MQTT
+│
+├── sensors.h
+├── sensors.cpp            → leitura dos sensores (MAX30102 + MLX)
+│
+├── display.h
+├── display.cpp            → display OLED
+│
+├── bitmaps.h
+├── bitmaps.cpp            → imagens do display
