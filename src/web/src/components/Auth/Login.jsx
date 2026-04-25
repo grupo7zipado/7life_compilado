@@ -13,36 +13,36 @@ export default function Login() {
  const [error, setError] = useState("");
  const [loading, setLoading] = useState(false);
 
-  async function handleLogin() {
-  if( !usu_email || !usu_senha ) {
-    setError("Preencha email e senha");
-    return;
-  }
-  try {
-  setLoading(true);
-  setError(null);
+//   async function handleLogin() {
+//   if( !usu_email || !usu_senha ) {
+//     setError("Preencha email e senha");
+//     return;
+//   }
+//   try {
+//   setLoading(true);
+//   setError(null);
 
-  const response = await Api.post("/login", {
-  usu_email,
-  usu_password: usu_senha
-});
+//   const response = await Api.post("/login", {
+//   usu_email: usu_email,
+//   usu_password: usu_senha
+// });
 
-localStorage.setItem("token", response.data.data.token);
+// localStorage.setItem("token", response.data.data.token);
 
-navigate("/main");
+// navigate("/main");
 
-  } catch (error) {
+//   } catch (error) {
 
-   const errorMessage = error.response?.data?.message || "Ocorreu um erro no login";
-   setError(errorMessage);
+//    const errorMessage = error.response?.data?.message || "Ocorreu um erro no login";
+//    setError(errorMessage);
 
-  }
-  finally {
-    setLoading(false);
-  }
+//   }
+//   finally {
+//     setLoading(false);
+//   }
 
- }
- /// estado para controlar a animação de transição entre login e cadastro
+//  }
+//  /// estado para controlar a animação de transição entre login e cadastro
 
   const [active, setActive] = useState(false);
 
@@ -55,6 +55,29 @@ navigate("/main");
   // const teste = () => {
   //   navigate("/Main");
   // };
+
+  //by haines
+  const handleLogin = async () => {
+    try {
+      const response = await Api.post("/login", {
+        usu_email: usu_email,
+        usu_password: usu_senha
+      });
+
+      console.log("SUCESSO:", response);
+
+    } catch (error) {
+      if (error.response) {
+        // 🔥 aqui está a resposta do backend (mesmo 403, 401, 500...)
+        console.log("ERRO STATUS:", error.response.status);
+        console.log("ERRO DATA:", error.response.data);
+        console.log("ERRO COMPLETO:", error.response);
+      } else {
+        // erro tipo: sem internet, timeout, etc
+        console.log("ERRO GERAL:", error.message);
+      }
+    }
+  };
  
   return (
 
