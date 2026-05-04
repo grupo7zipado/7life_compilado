@@ -49,4 +49,4 @@ main:BEGIN
 
 END $$
 
-DELIMITER;
+DELIMITER ;

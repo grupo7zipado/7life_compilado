@@ -9,8 +9,52 @@ listagem dos últimos dados dos usuários
 
 fazer
 
-cadastro de esps
+1 - cadastro de esps
+    1.1 - campos
+        esp_id	            ID interno
+        esp_nome            Nome amigável do dispositivo
+        esp_codigo	        Código único do ESP
+        esp_mac             MAC Address do Wi-Fi
+        esp_chip_id	        ID/chip único do ESP
+        esp_modelo          ESP32, ESP8266 etc
+        esp_firmware        Versão do firmware
+        esp_status          Ativo/inativo
+        esp_online          Online/offline
+        esp_ip              Último IP conectado
+        esp_wifi_ssid       Rede conectada
+        esp_bateria         Nível bateria (%)
+        esp_sinal_wifi      RSSI
+        esp_ultima_conexao  Último ping
+        esp_data_cadastro   Cadastro
+        esp_observacao      Observações 
+
+        Atuais
+        esp_id	            ID interno
+        esp_mac             MAC Address do Wi-Fi
+        esp_data_cadastro   Cadastro               esp_timestamp
+
+        Adicionar
+        esp_nome            Nome amigável do dispositivo  cadastro
+        esp_codigo	        Código único do ESP           pensar depois como gerar (talvez gerar na web cadastrar no banco e usar de chave para quando oesp enviar as informações dele para o broker)
+        esp_mac             MAC Address do Wi-Fi          pega do esp        
+        esp_modelo          ESP32, ESP8266 etc            pega do esp
+        esp_status          Ativo/inativo                 gera no banco controla pelo web
+        esp_online          Online/offline                broker no evento de desconexão e conexão atualiza
+        esp_ultima_conexao  Última conexão                evento de desconexão
+
+        Talvez Não
+        esp_chip_id	        ID/chip único do ESP
+        esp_ip              Último IP conectado
+        esp_wifi_ssid       Rede conectada
+        esp_bateria         Nível bateria (%)
+        esp_sinal_wifi      RSSI
+
 listagem de esps
 
 cadastro de usuariosesps
 listagem do usuariosesps
+
+
+
+
+colocar a validação de admin para a proc_criar_esp_web

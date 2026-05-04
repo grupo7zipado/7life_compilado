@@ -1,4 +1,3 @@
-import { ImFeed } from "react-icons/im";
 import _db from "../services/db.js";
 const DadosUsuarios =  async (req, res)=>{
     try {
@@ -30,7 +29,6 @@ const DadosUsuariosUltimos =  async (req, res)=>{
     try {
         const { usu_id } = req.user;
         const dadosUsuarios = await _db.query("CALL proc_ultimos_dados_usuarios(?)", usu_id);
-        console.log(dadosUsuarios[0][0][0]._sucess);
         if(dadosUsuarios[0][0][0]._sucess == 0){
             return res.status(403).json({
                 sucess:false

@@ -1,3 +1,6 @@
+/*
+Dependente de jwt.js
+*/
 import ByJwt from "./jwt.js";
 const AutentificacaoJwt = (req, res, next)=>{
     const stringtoken = req.headers['authorization'];
