@@ -4,12 +4,20 @@ import path from 'path';
 import mysql from 'mysql2/promise';
 import { log } from 'console';
 import { exit } from 'process';
+const config = {
+    "DB_HOST": "10.67.22.216",
+    "DB_PORT": "3306",
+    "DB_USER": "us_des_222_sa3",
+    "DB_PASSWORD": "ab1506",
+    "DB_NAME": "bd_tcc_des_222_sa3"
+}
+
 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'tcctestes',
+    host: config.DB_HOST,
+    user: config.DB_USER,
+    password: config.DB_PASSWORD,
+    database: config.DB_NAME,
     waitForConnections: true,
     connectionLimit: 10,
     multipleStatements: true
@@ -17,7 +25,7 @@ const pool = mysql.createPool({
 
 async function createProcedure() {
     try {
-        const caminho = path.resolve('/home/sombrah/Projetos/7life_compilado/src/banco/v3-demo/procedures-script');
+        const caminho = path.resolve('../7life_compilado/src/banco/v3-demo/procedures-script');
         console.log(caminho);
         const arquivos = fs.readdirSync(caminho);
         console.log(arquivos);
