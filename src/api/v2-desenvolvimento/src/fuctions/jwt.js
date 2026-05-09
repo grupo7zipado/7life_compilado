@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-import config from "../config.json" with {type: "json"}
+import config from "../../../../../db.json" with {type: "json"}
 
 function gerarToken(payload) {
     return jwt.sign(payload, config.CHAVE_JWT, {

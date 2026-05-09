@@ -4,13 +4,7 @@ import path from 'path';
 import mysql from 'mysql2/promise';
 import { log } from 'console';
 import { exit } from 'process';
-const config = {
-    "DB_HOST": "10.67.22.216",
-    "DB_PORT": "3306",
-    "DB_USER": "us_des_222_sa3",
-    "DB_PASSWORD": "ab1506",
-    "DB_NAME": "bd_tcc_des_222_sa3"
-}
+import config from "../../db.json" with { type: "json" }
 
 
 const pool = mysql.createPool({

@@ -14,7 +14,6 @@ let connection;
 
 try {
     connection = mysql.createPool(config)
-    console.log(connection);
 } catch (error) {
     console.log(error)
 }

@@ -1,5 +1,5 @@
 
-import configs from "../config.json" with { type: "json" }
+import configs from "../../../../../db.json" with { type: "json" }
 import mysql from "mysql2/promise";
 
 const config = {
