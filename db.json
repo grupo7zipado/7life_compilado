@@ -3,5 +3,8 @@
     "DB_PORT": "3306",
     "DB_USER": "root",
     "DB_PASSWORD": "",
-    "DB_NAME": "tcctestes"
+    "DB_NAME": "tcctestes",
+    "CHAVE_JWT": "chave_secreta_para_gerar_tokens",
+    "PORTA_V2_API": 3000,
+    "PULOS": 10
 }
