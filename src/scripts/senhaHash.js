@@ -41,7 +41,7 @@ const SenhasSemHash = "SELECT usu_id, usu_password FROM usuariosA";
     UPDATE (tabela em que a senha está) SET (campo da senha) = ?  WHERE (campo do id da tabela) = ?
 */
 const SenhaUpdate = "UPDATE usuariosA SET usu_password = ? WHERE usu_id = ?" ;
-const Main = async () =>{
+export const Main = async () =>{
     //retorna as senhas a serem alteradas
     const res = await _db.query(SenhasSemHash);
     const itens = res[0]

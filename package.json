@@ -9,8 +9,10 @@
     "dev:broker": "node ./src/broker/src/index.js",
     "dev:web": " cd ./src/web && npm run dev",
     "dev:api2": "node ./src/api/v2-desenvolvimento/src/index.js",
-    "dev:senhaHash": "node ./src/scripts/gerarHashSenha.js",
-    "dev:proc": "node ./src/scripts/createProc.js"
+    "dev:senhaHash": "node ./src/scripts/senhaHash.js",
+    "dev:proc": "node ./src/scripts/createProc.js",
+    "dev:reset": "node ./src/scripts/reset.js",
+    "dev:resetDataBase": "npm run dev:reset && npm run dev:proc && npm run dev:senhaHash"
   },
   "repository": {
     "type": "git",

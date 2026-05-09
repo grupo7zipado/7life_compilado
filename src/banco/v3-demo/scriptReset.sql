@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS esps(
     esp_chave VARCHAR(32) NOT NULL UNIQUE COMMENT 'Chave única para o sistema',
     esp_mac VARCHAR(17) COMMENT 'Mac do dispositivo',
     esp_modelo VARCHAR(64) COMMENT "Modelo do dispositivo",
-    esp_codigo VARCHAR(128) UNIQUE COMMENT 'Codigo unico do dispositivo',
+    esp_codigo VARCHAR(128) UNIQUE 'Codigo unico do dispositivo',
     esp_online ENUM('on', 'off') DEFAULT 'off' COMMENT 'Se está conectado',
     esp_ultima_conexao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     esp_status INT NOT NULL DEFAULT 1 COMMENT '0 - Inativo, 1 - Cadastro Parcial, 2 - Cadastro Completo',
