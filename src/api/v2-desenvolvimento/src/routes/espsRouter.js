@@ -6,6 +6,7 @@ const EspsRouter = Router();
 
 EspsRouter
 .post("/", EspsController.CadastrarEsps)
+.get("/ativos", AutentificacaoJwt, EspsController.ListarEspsAtivos)
 .get("/", AutentificacaoJwt, EspsController.ListarEsps)
 ;
 

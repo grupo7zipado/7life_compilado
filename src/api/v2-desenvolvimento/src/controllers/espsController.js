@@ -49,9 +49,30 @@ const ListarEsps = async (req, res)=>{
     }
 }
 
+const ListarEspsAtivos = async (req, res)=>{
+    try {
+        const user = req.user;
+        const listarEsps = await _db.query("CALL proc_listar_esps_ativos(?)",[user.usu_id]);
+        return res.status(200).json({
+            sucess:true
+           ,message: "suscesso"
+           ,data: listarEsps[0][0]
+        })
+    } catch (error) {
+        console.log(error);
+        
+        return res.status(500).json({
+            sucess: false
+           ,message:"Erro não indentificado"
+           ,error: error
+        })
+    }
+}
+
 const EspsController = {
     CadastrarEsps,
-    ListarEsps
+    ListarEsps,
+    ListarEspsAtivos
 }
 
 export default EspsController

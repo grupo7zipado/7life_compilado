@@ -1,8 +1,8 @@
 -- procedures default
-DROP PROCEDURE IF EXISTS proc_listar_esps;
+DROP PROCEDURE IF EXISTS proc_listar_esps_ativos;
 
 DELIMITER $$
-CREATE PROCEDURE proc_listar_esps (
+CREATE PROCEDURE proc_listar_esps_ativos (
     IN p_usu_id INT
 )
 main:BEGIN 
@@ -20,7 +20,7 @@ main:BEGIN
     	LEAVE main;
     END IF;
 
-    SELECT esp_nome, esp_codigo, esp_mac FROM esps;
+    SELECT esp_nome, esp_codigo, esp_mac FROM esps WHERE esp_status = 'ativo';
     LEAVE main;
 
 END $$
